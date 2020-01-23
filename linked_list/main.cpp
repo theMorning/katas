@@ -16,13 +16,17 @@ int main() {
   Node<int> *front;
   front = linked_list.pop_front();
   assert(front->data == 7);
+  delete front;
 
   front = linked_list.pop_front();
   assert(front->data == 12);
+  delete front;
 
   front = linked_list.pop_front();
   assert(front->data == 20);
+  delete front;
 
   front = linked_list.pop_front();
   assert(front->data == 25);
+  delete front;
 }

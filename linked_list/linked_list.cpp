@@ -3,7 +3,7 @@
 
 using std::cout;
 
-template <class T> void LinkedList<T>::print() {
+template <class T> void LinkedList<T>::print(std::ostream& cout) {
   Node<T> *node = this->get_front();
   while (node) {
     cout << node->data << "\n";
@@ -11,7 +11,9 @@ template <class T> void LinkedList<T>::print() {
   }
 }
 
-template <class T> Node<T> *LinkedList<T>::get_front() { return this->head; }
+template <class T> Node<T> *LinkedList<T>::get_front() {
+  return this->head;
+}
 
 template <class T> void LinkedList<T>::push_front(T item) {
   Node<T> *node = new Node<T>;
