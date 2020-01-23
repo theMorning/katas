@@ -5,6 +5,7 @@
 using std::vector;
 using std::cout;
 
+// only square matrices
 void matrix_rotate(vector<vector<int>> &matrix) {
   int N = matrix[0].size();
   for (int x = 0; x < (N / 2); x++) {
@@ -18,10 +19,11 @@ void matrix_rotate(vector<vector<int>> &matrix) {
   }
 }
 
-void print_matrix(vector<vector<int>> matrix) {
-  for (auto &row : matrix) {
-    for (auto &item : row) {
-      cout << item << "\n";
+void print_matrix(vector<vector<int>> matrix, std::ostream& cout) {
+  for (auto row : matrix) {
+    for (auto item : row) {
+      cout << item << " ";
     }
+    cout << "\n";
   }
 }
