@@ -8,11 +8,9 @@ bool palindrome_check(string s1, string s2) {
   }
 
   int s1_position = 0;
-  int s2_position = s2.size() - 1;
-  while (s1_position <= s2_position) {
-    if (s1.at(s1_position) == s2.at(s2_position)) {
+  while (s1_position < s1.size()) {
+    if (s1.at(s1_position) == s2.at(s2.size() - s1_position - 1)) {
       s1_position++;
-      s2_position--;
     } else {
       return false;
     }
