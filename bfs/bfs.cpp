@@ -16,7 +16,23 @@ void Graph::add_edge(int source, int destination) {
   adj[source].push_back(destination);
 }
 
-void Graph::bfs(int source) {
+int Graph::number_of_edges(int source) {
+  if (source < vertex_count) {
+    return adj[source].size();
+  } else {
+    return 0;
+  }
+}
+
+int Graph::number_of_vertices() {
+  return vertex_count;
+}
+
+void Graph::bfs(int source, std::ostream& cout) {
+  if (vertex_count == 0) {
+    return;
+  }
+
   list<int> q;
 
   bool *visited = new bool[vertex_count];
@@ -39,4 +55,5 @@ void Graph::bfs(int source) {
       }
     }
   }
+  cout << std::endl;
 }
